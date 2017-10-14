@@ -1,0 +1,91 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<LINK rel="Bookmark" href="/favicon.ico" >
+<LINK rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<script type="text/javascript" src="Admin/User/edit.js"></script>
+
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/lib/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" href="../../Admin/Mode/plugins/layui/css/layui.css" media="all" />
+
+
+<link rel="stylesheet" href="../../Admin/Mode/plugins/layui/css/layui.css" media="all" />
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script type="text/javascript" src="../../Admin/Mode//js/ajaxfileupload.js"></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+
+<title>订单编辑页</title>
+<link href="../../Admin/Mode/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div class="page-container">
+	<div class="layui-form-item">
+		   <label class="layui-form-label">修改进度:</label>
+		   <div style="margin-left:7px;margin-top:10px;float:left;">
+		      <select name="selectSchedule" id="selectSchedule" style="width:220px;"> 
+		        <option value="">---请选择---</option>
+		        <!-- <option value=""></option>    
+		        <option value="0">已录入</option>   
+		        <option value="1">已翻译</option>   
+		        <option value="2">已编辑1</option> 
+		        <option value="3">已编辑2</option>    
+		        <option value="4">已审核</option> -->
+     		  </select>
+		   </div>
+		</div>
+
+		<!-- 按钮-->		
+		<div class="layui-form-item">
+			<div class="layui-input-block" style="margin-left:190px;">
+				<button class="layui-btn" lay-submit="" lay-filter="demo1" onclick="changeSchedule()">修改</button>
+			</div>
+		</div>
+	
+</div>
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../../Admin/Mode/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="js/edit.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/plugins/layui/lay/modules/form.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/icheck/jquery.icheck.min.js"></script> 
+
+<script type="text/javascript" src="../../Admin/Mode/static/h-ui.admin/js/H-ui.admin.js"></script>  
+
+<!--/_footer /作为公共模版分离出去-->
+<script type="text/javascript">
+$(function(){
+	//show("1");
+	alert(1111111111);
+	
+/* 	$('#selectSchedule').change(function(){
+		schedule = $("#selectSchedule").val();
+		alert(schedule)
+	})
+ */	//alert(11);
+})
+</script>
+<!--请在下方写此页面业务相关的脚本-->
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<LINK rel="Bookmark" href="/favicon.ico" >
+<LINK rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="../../Admin/Mode/lib/html5.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/respond.min.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/PIE_IE678.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/lib/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" href="../../Admin/Mode/plugins/layui/css/layui.css" media="all" />
+<link rel="stylesheet" type="text/css" href="css/jquery.bigcolorpicker.css" />
+<!--[if IE 6]>
+<script type="text/javascript" src="../../Admin/Mode/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+
+<title>添加用户 </title>
+<link href="../../Admin/Mode/lib/webuploader/0.1.5/webuploader.css" rel="stylesheet" type="text/css" />
+<meta name="keywords" content="H-ui.admin v2.3,H-ui网站后台模版,后台模版下载,后台管理系统模版,HTML后台模版下载">
+<meta name="description" content="H-ui.admin v2.3，是一款由国人开发的轻量级扁平化网站后台模板，完全免费开源的网站后台管理系统模版，适合中小型CMS后台系统。">
+</head>
+<body>
+<article class="page-container">
+	<form action="../../useradd.jhtm"  method="post" class="form form-horizontal" target="rfFrame" id="form-member-add">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户名：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text"  value="" placeholder="请设置用户名" autocomplete="off" tip="请输入用户名" id="nickname" name="nickname">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户密码：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="请设置密码" tip="长度为6—16个字符" id="password" name="password">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>性别：</label>
+			<div class="formControls col-xs-8 col-sm-9 skin-minimal">
+				<div class="radio-box">
+					<input name="sex" type="radio" id="sex-1" value ="1">
+					<label for="sex-1">男</label>
+				</div>
+				<div class="radio-box">
+					<input name="sex" type="radio" id="sex-2" value="0" >
+					<label for="sex-2">女</label>
+				</div>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>帐号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="输入手机号"  tip="请输入手机号" id="account" name="account">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>画笔颜色：</label>
+			<div class="demo formControls col-xs-8 col-sm-9">
+   		        <input type="text" id="c1" name="color" style="line-height:28px;width:244px;"/>
+             </div>
+			<!-- <div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" value="" placeholder="" id="color" name="color">
+		    </div> -->
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">邮箱：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input type="text" class="input-text" placeholder="@" autocomplete="off" tip="请输入邮箱" name="mail" id="mail">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>用户角色：</label>
+			 <div class="formControls col-xs-8 col-sm-9">
+			      <select name="role_id" id="selectRole"> 
+			        <option value=""></option>
+			        <option value="1">录入员</option>     
+			        <option value="2">编辑员</option>   
+			        <option value="3">审核员</option>             
+			        <option value="4">普通用户</option>    
+	     		   </select>
+			 </div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="submit btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;">
+			</div>
+		</div>
+	</form>
+	　<iframe id="rfFrame" name="rfFrame" src="about:blank" style="display:none;"></iframe> 
+</article>
+
+<!--_footer 作为公共模版分离出去--> 
+<script type="text/javascript" src="../../Admin/Mode/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="js/jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="js/jquery.bigcolorpicker.min.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/plugins/layui/lay/modules/form.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/icheck/jquery.icheck.min.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/lib/jquery.validation/1.14.0/messages_zh.min.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/static/h-ui.admin/js/H-ui.admin.js"></script>
+<!--/_footer /作为公共模版分离出去--> 
+
+<!--请在下方写此页面业务相关的脚本--> 
+<script type="text/javascript">
+$(function(){
+	$("#c1").bigColorpicker("c1");
+ 	//让当前表单调用validate方法，实验表单颜证功能
+	 $("#form-member-add").validate({
+		//debug:true, //调试模式，成功也不会跳转目标页面
+		//onkeyup:null, //当丢失焦点时才触发验证请求
+		rules:{  //配置验证规则，key就是被验证的dom对象，value就是调用验证的方法
+			nickname:{
+				required:true,  //必填。如果验证方法不需要参数，则配置为true
+                rangelength:[2,15],
+              /*   remote:{
+                    url:"../../useradd.jthm",
+                    type:"post"
+                } */
+			},
+			password:{
+				required:true,
+				rangelength:[6,12]
+			},
+			sex:{
+				required:true,
+			},
+			 account:{
+				required:true,
+			},
+			color:{
+				required:true,
+			}, 
+			/* mail:{
+				 required:true,
+                 email:true
+			}, */
+	 		role_id:{
+				required:true,
+			}
+			
+		},
+		messages:{
+			nickname:{
+                required:"请输入用户名",
+                rangelength:$.validator.format("用户名长度在必须为：{2}-{15}之间"),
+               //remote:"该用户名已存在！"
+            },
+            password:{
+                required:"请输入密码",
+                rangelength:$.validator.format("字段长度必须为：{6}-{12}之间")
+            },
+           sex:{
+            	required:"请选择性别",
+            }, 
+            account:{
+            	required:"请输入账号"
+            },
+            color:{
+            	required:"请选择画笔颜色"
+            },
+           /*  mail:{
+                required:"请填写邮件",
+                email:"邮箱格式不正确"
+            }, */
+            role_id:{
+                required:"请选择角色"
+            }
+        }
+    });
+});
+/*function validate_required(field,alerttxt)
+{ onSubmit="return validate_form(this)"
+  with (field)
+  {
+ 	if (value==null||value==""){	
+	  field.setAttribute('class', 'asd');
+      return false;
+   	}
+  	else {return true;}
+  }
+}
+
+function validate_form(thisform)
+{
+with (thisform)
+{
+  var flag = 0;
+
+  if (validate_required(nickname,"nickname must be filled out!")==false){
+		alert("用户名能为空!");
+		flag = 1;
+  }
+  if (validate_required(password,"password must be filled out!")==false){
+		alert("密码不能为空!");
+		flag = 1;
+  }
+  if (validate_required(account,"account must be filled out!")==false){
+		alert("账号不能为空!");
+		flag = 1;
+  }
+  if (validate_required(role_id,"role_id must be filled out!")==false){
+		alert("用户角色不能为空!");
+		flag = 1;
+  } 
+  if (validate_required(color,"color must be filled out!")==false){
+		alert("画笔颜色不能为空!");
+		flag = 1;
+} 
+  if(flag == 1) {
+	  return false;
+  } else {
+	  return true;
+  }
+ }
+}*/
+</script> 
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

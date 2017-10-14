@@ -1,0 +1,212 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<base href="" id="web_href"/>
+<!-- <meta http-equiv="refresh" content="50"> -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+<script type="text/javascript">
+getRealPath();
+document.getElementById("web_href").href = getRealPath();
+function getRealPath(){
+	var curWwwPath = window.document.location.href;
+	var pathName =  window.document.location.pathname;
+	var pos = curWwwPath.indexOf(pathName);
+	var localhostPaht = curWwwPath.substring(0,pos);
+	var projectName = pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+	/* alert (localhostPaht + projectName +"/" );  */
+	return (localhostPaht + projectName + "/");
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="Admin/Mode/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/lib/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" href="Admin/Mode/css/table.css" />
+<link rel="stylesheet" href="Admin/Mode/plugins/layui/css/layui.css" media="all" />
+
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>订单列表</title>
+</head>
+<body>
+<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 用户管理 <span class="c-gray en">&gt;</span> 用户列表 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+<div class="page-container">
+	<div class="text-c">
+		
+		<input type="text" class="input-text" style="width:250px" placeholder="输入用户名" id="user_name" name="">
+		<button type="submit" class="btn btn-success radius" id="" name="" onclick="shouUserByName('1')"><i class="Hui-iconfont">&#xe665;</i> 搜用户</button>
+	</div>
+	<div class="cl pd-5 bg-1 bk-gray mt-20 "> 
+		<span class="l">
+			<a href="javascript:;" onclick="datadelUser()" class="btn btn-danger radius" id="bath_delete">
+				<i class="Hui-iconfont">&#xe6e2;</i> 批量删除
+			</a>
+			<a href="javascript:;" onclick="member_add('添加用户','Admin/User/member-add.html','','510')" class="btn btn-primary radius"  id="add_user">
+				<i class="Hui-iconfont">&#xe600;</i> 添加用户
+			</a>
+			<!-- <a href="javascript:;" onclick="member_look('查看','Admin/User/member-look.html','','510')" class="btn btn-primary radius"  id="add_user">
+				<i class="Hui-iconfont">&#xe620;</i> 编辑员操作顺序
+			</a> -->
+		</span>
+		<span class="r">共有数据：<strong id="all_data">88</strong> 条</span>
+	</div>
+	
+	<div class="mt-20">
+	<table class="table table-border table-bordered table-hover table-bg table-sort" style="margin-bottom: 30px">
+		<thead>
+			<tr class="text-c">
+				<th width="25"><input type="checkbox" name="" value="" id="allChk"></th>
+				<th width="80" class="hidden-xs">ID</th>
+				<th width="100" class="hidden-xs">用户名</th>
+				<th width="40">性别</th>
+				<th width="90">账号</th>
+				<th width="90">密码</th>
+				<th width="150">邮箱</th>
+				<th width="130">用户角色</th>
+				<th width="100">操作</th>
+			</tr>
+		</thead>
+		
+		<tbody class="tr_data">
+			<tr class="text-c">
+				<td><input type="checkbox" value="1" name=""></td>
+				<td>1</td>
+				<td class="hidden-xs">张三</td>
+				<td>男</td>
+				<td>13000000000</td>
+				<td>admin@mail.com</td>
+				<td>用户角色1</td>
+				<td>2014-6-11 11:11:42</td>
+				<td class="td-manage">
+					<!--<a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用">
+						<i class="Hui-iconfont">&#xe631;</i>
+					</a>-->
+					<a title="编辑" href="javascript:;" onclick="member_edit('修改信息','Admin/User/edit.html','4','','460')" class="ml-5" style="text-decoration:none">
+						<i class="Hui-iconfont">&#xe6df;</i>
+					</a>
+					<a title="删除" href="javascript:;" onclick="member_del(this,'json.userList[i].userId+','+json.userList[i].userState+'')" class="ml-5" style="text-decoration:none">
+						<i class="Hui-iconfont">&#xe6e2;</i>
+					</a>
+				</td>
+			</tr>
+			<tr class="text-c">
+				<td><input type="checkbox" value="1" name=""></td>
+				<td>2</td>
+				<td class="hidden-xs">张三</td>
+				<td>男</td>
+				<td>13000000000</td>
+				<td>admin@mail.com</td>
+				<td>用户角色2</td>
+				<td>2014-6-11 11:11:42</td>
+				<td class="td-manage">
+					<!-- <a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用">
+						<i class="Hui-iconfont">&#xe631;</i>
+					</a>-->
+					<a title="编辑信息" href="javascript:;" onclick="member_edit('修改信息','Admin/User/edit.html','4','','460')" class="ml-5" style="text-decoration:none">
+						<i class="Hui-iconfont">&#xe6df;</i>
+					</a>
+					<a title="删除" href="javascript:;" onclick="member_del(this,'json.userList[i].userId+','+json.userList[i].userState+'')" class="ml-5" style="text-decoration:none">
+						<i class="Hui-iconfont">&#xe6e2;</i>
+					</a>
+				</td>
+			</tr>
+			<tr class="text-c">
+				<td><input type="checkbox" value="1" name=""></td>
+				<td>3</td>
+				<td>张三</td>
+				<td>男</td>
+				<td>13000000000</td>
+				<td>admin@mail.com</td>
+				<td>用户角色3</td>
+				<td>2014-6-11 11:11:42</td>
+			    <td class="td-manage">
+					<!--<a style="text-decoration:none" onClick="member_stop(this,'10001')" href="javascript:;" title="停用">
+						<i class="Hui-iconfont">&#xe631;</i>
+					</a>-->
+					<a title="编辑" href="javascript:;" onclick="member_edit('修改信息','Admin/User/edit.html','4','','460')" class="ml-5" style="text-decoration:none">
+						<i class="Hui-iconfont">&#xe6df;</i>
+					</a>
+					<a title="删除" href="javascript:;" onclick="member_del(this,'json.userList[i].userId+','+json.userList[i].userState+'')" class="ml-5" style="text-decoration:none">
+						<i class="Hui-iconfont">&#xe6e2;</i>
+					</a>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+	<div class="admin-table-page">
+		<div id="page" class="page">
+		</div>
+	</div>
+	</div>
+</div>
+<script type="text/javascript" src="Admin/Mode/lib/jquery/1.9.1/jquery.min.js"></script> 
+<script type="text/javascript" src="Admin/User/js/user.js"></script>
+<script type="text/javascript" src="Admin/Mode/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="Admin/Mode/static/h-ui.admin/js/H-ui.admin.js"></script> 
+<script type="text/javascript" src="Admin/Mode/plugins/layui/layui.js"></script>
+<script type="text/javascript">
+
+ /*用户-添加*/
+function member_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+/*查看-编辑员*/
+function member_look(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+/*用户-停用*/
+function member_stop(obj,id){
+	layer.confirm('确认要修改吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_start(this,id)" href="javascript:;" title="启用"><i class="Hui-iconfont">&#xe6e1;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-defaunt radius">已停用</span>');
+		$(obj).remove();
+		layer.msg('已停用!',{icon: 5,time:1000});
+	});
+}
+
+/*用户-启用*/
+function member_start(obj,id){
+	layer.confirm('确认要启用吗？',function(index){
+		$(obj).parents("tr").find(".td-manage").prepend('<a style="text-decoration:none" onClick="member_stop(this,id)" href="javascript:;" title="停用"><i class="Hui-iconfont">&#xe631;</i></a>');
+		$(obj).parents("tr").find(".td-status").html('<span class="label label-success radius">已启用</span>');
+		$(obj).remove();
+		layer.msg('已启用!',{icon: 6,time:1000});
+	});
+}
+/*编辑用户*/
+function member_edit(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+
+/*用户-删除*/
+function member_del(obj,id){	
+	layer.confirm('确认要删除吗？',function(index){
+		$(obj).parents("tr").remove(); 		
+		layer.msg('已删除!',{icon:1,time:1000}); 
+		changeUserState(id);
+	});
+}
+function getContextPath(){     
+    var pathName = document.location.pathname;     
+    var index = pathName.substr(1).indexOf("/");     
+    var result = pathName.substr(0,index+1);     
+    return result;     
+} 
+
+</script>
+</body>
+</html>

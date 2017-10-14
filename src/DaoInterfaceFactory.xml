@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<bean>  
+     <interface id="com.pdf.dao.UserDao" class="com.pdf.daoImpl.UserDaoImpl"/>
+     <interface id="com.pdf.dao.OrderDao" class="com.pdf.daoImpl.OrderDaoImpl"/>
+     <interface id="com.pdf.dao.andriod.UserDao_andriod" class="com.pdf.daoImpl.andriod.UserDaoImpl_andriod"/>
+      <interface id="com.pdf.dao.andriod.OrderDao_andriod" class="com.pdf.daoImpl.andriod.OrderDaoImpl_andriod"/>
+     <interface id="com.pdf.dao.LogDao" class="com.pdf.daoImpl.LogDaoImpl"/>
+</bean>  

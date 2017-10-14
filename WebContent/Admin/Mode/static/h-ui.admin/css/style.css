@@ -1,0 +1,94 @@
+@charset "utf-8";
+/* 你自己的样式 */
+.tbody{
+	width:101%;
+	height:43px;
+	align:center;
+	display:block;
+}
+.th-fengmian{
+	width:28%;
+	height:43px;
+	float:left;
+	text-align:center;
+	align:center;
+	border:solid 1px #eee;
+	background-color:#f5fafe;
+}
+.th-msg{
+	width:14%;
+	height:43px;
+	float:left;
+	text-align:center;
+	border:solid 1px #eee;
+	background-color:#f5fafe;
+}
+
+.th-msg2{
+	width:7%;
+	height:43px;
+	float:left;
+	text-align:center;
+	border:solid 1px #eee;
+	background-color:#f5fafe;
+}
+
+.box{
+	width:100%;
+	height:150px;
+	float:left;
+	align:center;
+	border: solid 1px #eee;
+	display:block;
+}
+.box-head{
+	width:100%;
+	height:39px;
+	align:center;
+	background:#f5fafe;
+	border:solid 1px #d2d2d2;
+	display:block;
+}
+.box-headmsg{
+	width: 40%;
+	height:39px;
+	float:left;
+	margin-left:10px;
+}
+.box-icon{
+	float:right;
+	margin-right:30px;
+	align:right;
+}
+.box-body{
+	width:100%;
+}
+.box-fengmian{
+	width:26%;
+	align:center;
+	text-align:left;
+	margin:auto;
+}
+.box-Pic{
+	width:45%;
+	float:left;
+	margin-left:3%;
+	padding:0px;
+}
+.box-PicMsg{
+	width:50%;
+	text-align:center;
+	float:left;
+}
+.box-msg{
+	width:13%;
+	height:110px;
+	text-align:center;
+	border:solid 1px #eee;
+}
+.box-msg2{
+	width:6.5%;
+	height:110px;
+	text-align:center;
+	border:solid 1px #eee;
+}

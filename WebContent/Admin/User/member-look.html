@@ -1,0 +1,84 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<base href="" id="web_href"/>
+<!-- <meta http-equiv="refresh" content="50"> -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="lib/html5.js"></script>
+<script type="text/javascript" src="lib/respond.min.js"></script>
+<script type="text/javascript" src="lib/PIE_IE678.js"></script>
+<![endif]-->
+<script type="text/javascript">
+getRealPath();
+document.getElementById("web_href").href = getRealPath();
+function getRealPath(){
+	var curWwwPath = window.document.location.href;
+	var pathName =  window.document.location.pathname;
+	var pos = curWwwPath.indexOf(pathName);
+	var localhostPaht = curWwwPath.substring(0,pos);
+	var projectName = pathName.substring(0,pathName.substr(1).indexOf('/')+1);
+	/* alert (localhostPaht + projectName +"/" );  */
+	return (localhostPaht + projectName + "/");
+}
+</script>
+
+<link rel="stylesheet" type="text/css" href="Admin/Mode/static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/lib/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="Admin/Mode/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" href="Admin/Mode/plugins/layui/css/layui.css" media="all" />
+
+<!--[if IE 6]>
+<script type="text/javascript" src="http://lib.h-ui.net/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<title>订单列表</title>
+</head>
+<body>
+<div class="page-container">
+ <table class="table" id="ta1">
+    <tbody>
+      <tr>
+        <th class="text-r" width="80">账号：</th>
+        <td id="order_id">112300</td>
+      </tr>
+      <tr>
+        <th class="text-r">性别：</th>
+        <td id="clicent_name"></td>
+      </tr>
+      <tr>
+        <th class="text-r">邮箱：</th>
+        <td id="order_time"></td>
+      </tr>
+      <tr>
+        <th class="text-r">昵称：</th>
+        <td id="deliever_time"></td>
+      </tr>
+    </tbody>
+  </table>	
+</div>
+<script type="text/javascript" src="Admin/Mode/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="Admin/Mode/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="Admin/User/js/member-look.js"></script>
+<script type="text/javascript" src="Admin/Mode/plugins/layui/layui.js"></script> 
+<script type="text/javascript" src="Admin/Mode/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="Admin/Mode/static/h-ui.admin/js/H-ui.admin.js"></script>
+<script type="text/javascript">
+
+function getContextPath(){     
+    var pathName = document.location.pathname;     
+    var index = pathName.substr(1).indexOf("/");     
+    var result = pathName.substr(0,index+1);     
+    return result;     
+} 
+
+</script>
+</body>
+</html>

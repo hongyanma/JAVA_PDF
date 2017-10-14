@@ -1,0 +1,275 @@
+<!--_meta 作为公共模版分离出去-->
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<LINK rel="Bookmark" href="/favicon.ico" >
+<LINK rel="Shortcut Icon" href="/favicon.ico" />
+<!--[if lt IE 9]>
+<script type="text/javascript" src="../../Admin/Mode/lib/html5.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/respond.min.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/PIE_IE678.js"></script>
+<![endif]-->
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui/css/H-ui.min.css" /> 
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/lib/Hui-iconfont/1.0.7/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/lib/icheck/icheck.css" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../../Admin/Mode/static/h-ui.admin/css/style.css" />
+<link rel="stylesheet" href="../../Admin/Mode/plugins/layui/css/layui.css" media="all" />
+<link type="text/css" rel="stylesheet" href="jedate/skin/jedate.css">
+<!--[if IE 6]>
+<script type="text/javascript" src="../../Admin/Mode/lib/DD_belatedPNG_0.0.8a-min.js" ></script>
+<script>DD_belatedPNG.fix('*');</script>
+<![endif]-->
+<!--/meta 作为公共模版分离出去-->
+<Style>
+.datainp{ width:300px; height:30px; border:1px #A5D2EC solid;}
+.datep{ margin-bottom:10px; line-height:24px; margin-right:15px;}
+.wicon{background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAQCAYAAADj5tSrAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABZ0RVh0Q3JlYXRpb24gVGltZQAwNi8xNS8xNGnF/oAAAAAcdEVYdFNvZnR3YXJlAEFkb2JlIEZpcmV3b3JrcyBDUzVxteM2AAAAoElEQVQ4jWPceOnNfwYqAz9dYRQ+E7UtwAaGjyUsDAyYYUgJ2HT5LXZLcEmSCnA6duOlN///////H0bDALl8dPH/////Z8FuNW6Qtvw2nL3lyjsGBgYGhlmRqnj1kGwJuqHIlhJlCXq8EOITEsdqCXLEbbr8FisfFkTo+vBZRFZwERNEFFkCiw90nxJtCalxQmzegltCzVyP1RJq5HZ8AABuNZr0628DMwAAAABJRU5ErkJggg=="); background-repeat:no-repeat; background-position:right center;}
+</Style>
+<title>添加订单 </title>
+<meta name="keywords" content="H-ui.admin v2.3,H-ui">
+<meta name="description" content="H-ui.admin v2.3">
+</head>
+<body>
+<article class="page-container">
+	<form id="form3" class="form form-horizontal" action="../../fileadd.jhtm" onSubmit="return validate_form(this)" method="post" enctype="multipart/form-data"  target="rfFrame" id="form-order-add" >
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>订单号：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input  type="text" class="input-text" value="" placeholder="请输入订单号" autocomplete="off" tip="请输入订单号" id="order_name" name="order_name">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>客户名称：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input  type="text" class="input-text" value="" placeholder="请输入客户名称" autocomplete="off" tip="请输入客户名" id="client_name" name="client_name">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3" ><span class="c-red">*</span>接单时间：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+			 <ul>
+			    <li class="datep"  ><input class="datainp wicon" id="date01" type="text" name="order_time" placeholder="请选择" value=""   readonly></li>					  
+			  </ul>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3" ><span class="c-red">*</span>订单生产截止时间：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+			 <ul>			    
+			    <li class="datep" ><span ></span><input class="datainp wicon" id="date03" type="text" name="end_time" placeholder="请选择" value=""  readonly></li>
+			  </ul>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>交货时间：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+			   <ul>
+			    <li class="datep"><input class="datainp wicon" id="date02" type="text" name="delivery_time" placeholder="请选择" value=""  readonly></li>
+			  </ul>
+			</div>
+			
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>订单说明：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<input  type="text" class="input-text" value="" placeholder="请输入订单说明" autocomplete="off" tip="请输入订单说明" id="explain" name="explain">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3">备注：</label>
+			<div class="formControls col-xs-8 col-sm-9">
+				<textarea  name="remark"  maxlength="100" class="textarea"  placeholder="说点什么...最少输入10个字符"  id="remark"></textarea>
+				<p class="textarea-numberbar"><em class="textarea-length">0</em>/100</p>
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-3"><span class="c-red">*</span>文件上传：</label>
+			
+			<div class="formControls col-xs-8 col-sm-9"> 
+		       <span class="btn-upload form-group">
+			 	   <input  id="file_path" type="file" accept="application/pdf" name="file_path" />
+				</span> 
+			</div>
+		</div>
+		<div class="row cl" style="margin-top:30px;">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<input class="btn btn-primary radius" type="submit" value="&nbsp;&nbsp;提交&nbsp;&nbsp;" />
+			</div>
+		</div>
+	</form>
+	　<iframe id="rfFrame" name="rfFrame" src="about:blank" style="display:none;"></iframe> 
+</article>
+
+<!--_footer 作为公共模版分离出去--> 
+<script type="text/javascript" src="../../Admin/Mode/lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/layer/2.1/layer.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/plugins/layui/layui.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/plugins/layui/lay/modules/form.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/icheck/jquery.icheck.min.js"></script> 
+<script type="text/javascript" src="jedate/jquery-1.7.2.js"></script>
+<script type="text/javascript" src="jedate/jquery.jedate.js"></script>
+<script type="text/javascript" src="../../Admin/Mode/lib/jquery.validation/1.14.0/jquery.validate.min.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/lib/jquery.validation/1.14.0/validate-methods.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/lib/jquery.validation/1.14.0/messages_zh.min.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/static/h-ui/js/H-ui.js"></script> 
+<script type="text/javascript" src="../../Admin/Mode/static/h-ui.admin/js/H-ui.admin.js"></script>
+
+
+<!--/_footer /作为公共模版分离出去--> 
+
+<!--请在下方写此页面业务相关的脚本--> 
+<script type="text/javascript">
+/* $(function(){
+	//让当前表单调用validate方法，实验表单颜证功能
+	$("#form-order-add").validate({
+		debug:true, //成功也不会跳转目标页面
+		onkeyup:null, //当丢失焦点时才触发验证请求
+		rules:{  //配置验证规则，key就是被验证的dom对象，value就是调用验证的方法
+			client_name:{
+				required:true,  //必填。如果验证方法不需要参数，则配置为true
+                rangelength:[6,12],
+                remote:{
+                    url:"../../fileadd.jthm",
+                    type:"post"
+                } 
+			},
+			order_time:{
+				required:true,
+			},
+			end_time:{
+				required:true,
+			},
+			delivery_time:{
+				required:true,
+			},
+			explain:{
+				required:true,
+				rangelength:[6,100],
+			},
+			file_path:{
+				required:true,
+			}
+			
+		},
+		messages:{
+			client_name:{
+                required:"请输入客户名称",
+                rangelength:$.validator.format("用户名长度在必须为：{0}-{1}之间"),
+                remote:"该用户名已存在！"
+            },
+            order_time:{
+                required:"请选择接单时间",
+            },
+            end_time:{
+            	required:"请选择截止时间",
+            },
+            delivery_time:{
+            	required:"请选择交货时间",
+            },
+            explain:{
+            	required:"请填写订单说明",
+            	rangelength:$.validator.format("用户名长度在必须为：{0}-{1}之间")
+            },
+            file_path:{
+                required:"请选择pdf上传文件",
+            }
+        }
+    });
+});	 */
+function validate_required(field,alerttxt)
+{
+  with (field)
+  {
+ 	if (value==null||value==""){	
+	  field.setAttribute('class', 'asd');
+      return false;
+   	}
+  	else {
+  		return true;
+  		//alert(11111);
+  		//setTimeout("location.reload();",1000);
+  		//window.location.reload();
+  	}
+  }
+}
+
+function validate_form(thisform)
+{
+with (thisform)
+{
+  var flag = 0;
+
+  if (validate_required(client_name,"Email must be filled out!")==false){
+		alert("客户名称能为空!");
+		flag = 1;
+  }
+  if (validate_required(explain,"Id must be filled out!")==false){
+		alert("订单说明不能为空!");
+		flag = 1;
+  }
+  if (validate_required(date01,"Id must be filled out!")==false){
+		alert("请选择接单时间!");
+		flag = 1;
+  }
+  if (validate_required(date03,"Id must be filled out!")==false){
+		alert("请选择订单生产截止时间!");
+		flag = 1;
+  }
+  if (validate_required(date02,"Id must be filled out!")==false){
+		alert("请选择交货时间!");
+		flag = 1;
+  }
+  if (validate_required(file_path,"Id must be filled out!")==false){
+		alert("请上传文件");
+		flag = 1;
+  }
+  if(flag == 1) {
+	  return false;
+  } else {
+	  return true;
+  }
+ }
+} 
+
+$("#date01").jeDate({
+    isinitVal:true,
+    //festival:true,
+    ishmsVal:false,
+    //isTime:false,
+    minDate: '2017-06-16',
+   // maxDate: $.nowDate({DD:0}),
+    maxDate: '2050-12-30',
+    format:"YYYY-MM-DD",
+    zIndex:3000,
+})
+$("#date02").jeDate({
+    isinitVal:true,
+    //festival:true,
+    ishmsVal:false,
+    minDate: '2016-06-16',
+    maxDate: '2050-12-30',
+    //maxDate: $.nowDate({DD:0}),
+    format:"YYYY-MM-DD",
+    //zIndex:3000,
+})
+$("#date03").jeDate({
+    isinitVal:true,
+    //festival:true,
+    ishmsVal:false,
+    minDate: '2016-06-16',
+    maxDate: '2050-12-30',
+    //maxDate: $.nowDate({DD:0}),
+    format:"YYYY-MM-DD",
+   // zIndex:3000,
+})
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>
